@@ -1,10 +1,10 @@
-#Migration Strategy Examples
+# Migration Strategy Examples
 
 ![avatar](./graph/table1.png)
 
-##caller
+## caller
 
-###Traceable
+### Traceable
 
 deprecated API: javax.swing.ScrollPaneLayout.getViewportBorderBounds(JScrollPane scrollpane)</br>
 replacement API: javax.swing.JScrollPane.getViewportBorderBounds()
@@ -27,20 +27,20 @@ replacement API: javax.swing.JScrollPane.getViewportBorderBounds()
 
 **The caller of replacement API is $Param1 in deprecated API parameter list.**
 
-###Instantiable
+### Instantiable
 
 deprecated API: java.util.Date.getYear()</br>
 replacement API: java.util.Calendar.get(Calendar.YEAR)
 
 **We can create an instance of Calendar by invoke Calendar.getInstance().**
 
-##Name
+## Name
 
 **Just change the name of deprecated API.**
 
-##Return Type
+## Return Type
 
-###Traceable
+### Traceable
 
 deprecated API: int java.awt.Frame.getCursorType()</br>
 replacement API: Cursor java.awt.Component.getCursor()
@@ -57,16 +57,16 @@ replacement API: Cursor java.awt.Component.getCursor()
 ```
 **Cursor -> int. invoker getCursor().getType().**
 
-###Convertible
+### Convertible
 
 deprecated API: Object[] javax.swing.JList.getSelectedValues()</br>
 replacement API: List<E> javax.swing.JList.getSelectedValuesList
 
 **Object[] -> List. Just invoker Java.util.List.toArray().** 
 
-##Parameter
+## Parameter
 
-###Creation
+### Creation
 
 deprecated API: java.lang.ClassLoader.defineClass(byte[],int,int)</br>
 replacement API: java.lang.ClassLoader.defineClass(java.lang.String,byte[],int,int)
