@@ -32,6 +32,16 @@ replacement API: javax.swing.JScrollPane.getViewportBorderBounds()
 deprecated API: java.util.Date.getYear()</br>
 replacement API: java.util.Calendar.get(Calendar.YEAR)
 
+```
+    public void getYear(){
+        Date date = new Date();
+        //int year = date.getYear();
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTime(date);
+        int year = calendar.get(Calendar.YEAR);
+    }
+```
+
 **We can create an instance of Calendar by invoke Calendar.getInstance().**
 
 ## Name
